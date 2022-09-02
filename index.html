@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Dicoding Bookshelf</title>
+		<link rel="stylesheet" href="/dist/css/tailwind.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet" />
+	</head>
+	<body class="antialiased h-[1000px]">
+		<div class="container mx-auto py-8 px-6">
+			<div class="flex flex-col text-white sm:justify-between mb-5 sm:text-left items-center py-4 px-8 bg-slate-900 sm:flex-row">
+				<h1 class="font-bold text-lg sm:text-2xl uppercase">Bookshelf Dicoding</h1>
+			</div>
+			<div class="flex flex-wrap gap-5">
+				<div class="from-blue-800 to-blue-700 bg-gradient-to-t w-full p-6 sm:p-8 text-white flex flex-col gap-6">
+					<article>
+						<h2 class="text-2xl font-bold mb-1">Tambah Buku</h2>
+						<p class="text-white/60 text-sm">Form ini digunakan untuk menambah buku baru.</p>
+					</article>
+					<form action="" id="add-form" class="flex flex-col gap-4">
+						<div>
+							<input
+								placeholder="Masukkan judul..."
+								class="p-2 px-4 bg-transparent border border-white/60 outline-none w-full mb-3" id="judul" autofocus
+							/>
+							<div class="flex gap-3 w-full">
+								<input
+									placeholder="Masukkan penulis..."
+									class="p-2 px-4 bg-transparent border border-white/60 w-full outline-none" id="penulis"
+								/>
+								<input
+								type="number"
+									placeholder="Masukkan tahun..."
+									class="p-2 px-4 bg-transparent border border-white/60 w-full outline-none" id="tahun"
+								/>
+							</div>
+						</div>
+						<div class="flex gap-2">
+							<input type="checkbox" id="dibaca" />
+							<label for="dibaca" class="text-white text-sm">Sudah dibaca</label>
+						</div>
+						<div class="text-right">
+							<button type="submit" class="bg-black px-8 py-2 rounded inline-block">Simpan</button>
+						</div>
+					</form>
+				</div>
+				<div class="bg-black/10 w-full p-6 sm:p-8 text-black flex flex-col gap-6">
+					<article>
+						<h2 class="text-2xl font-bold mb-1">Cari Buku</h2>
+						<p class="text-black/60 text-sm">Form ini digunakan untuk mencari buku anda.</p>
+					</article>
+					<form action="" class="flex flex-col gap-4">
+						<div>
+							<input
+								id="search-input"
+								placeholder="Ketikkan keyword pencarian buku..."
+								class="p-2 px-4 bg-transparent border border-black/60 outline-none w-full"
+							/>
+						</div>
+					</form>
+					<div class="grid grid-cols-2 gap-4" id="list-pencarian">
+					</div>
+				</div>
+				<div class="from-red-700 to-red-600 bg-gradient-to-t w-full p-6 sm:p-8 text-white flex flex-col gap-6">
+					<article>
+						<h2 class="text-2xl font-bold mb-1">Buku Belum Dibaca</h2>
+						<p class="text-white/60 text-sm">Daftar buku yang belum anda baca selama ini.</p>
+					</article>
+					<div id="list-belum-dibaca" class="grid sm:grid-cols-2 gap-4"></div>
+				</div>
+				<div class="from-green-700 to-green-600 bg-gradient-to-t w-full p-6 sm:p-8 text-white flex flex-col gap-6">
+					<article>
+						<h2 class="text-2xl font-bold mb-1">Buku Sudah Dibaca</h2>
+						<p class="text-white/60 text-sm">Daftar buku yang sudah anda baca selama ini.</p>
+					</article>
+					<div id="list-sudah-dibaca" class="grid sm:grid-cols-2 gap-4"></div>
+				</div>
+			</div>
+		</div>
+
+		<div class="fixed bottom-0 left-0 p-4" id="alert-axis">
+			
+		</div>
+	</body>
+
+	<script src="dist/js/main.js"></script>
+</html>
